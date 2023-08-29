@@ -1,6 +1,19 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
-}
+  const numMap = new Map();
+
+    for (const num of array) {
+        const diff = target - num;
+
+        if (numMap.has(diff)) {
+            return true;
+        }
+
+        numMap.set(num, true);
+    }
+
+    return false;
+  }
 
 /* 
   Write the Big O time complexity of your function here
